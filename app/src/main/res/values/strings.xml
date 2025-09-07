@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">QuanLyPhongTro</string>
+    <string name="title_main">Quản lý Phòng Trọ</string>
+
+    <string name="btn_rooms">Quản lý Phòng</string>
+    <string name="btn_tenants">Quản lý Người Thuê</string>
+    <string name="btn_invoices">Hóa đơn &amp; Thanh toán</string>
+    <string name="btn_notifications">Thông báo &amp; Nhắc nhở</string>
+    <string name="btn_feedback">Khiếu nại / Phản ánh</string>
+
+    <string name="toast_rooms">Đi tới Quản lý Phòng</string>
+    <string name="toast_tenants">Đi tới Quản lý Người Thuê</string>
+    <string name="toast_invoices">Đi tới Hóa đơn &amp; Thanh toán</string>
+    <string name="toast_notifications">Đi tới Thông báo &amp; Nhắc nhở</string>
+    <string name="toast_feedback">Đi tới Khiếu nại / Phản ánh</string>
+    <string name="add_room">Thêm phòng</string>
+</resources>
