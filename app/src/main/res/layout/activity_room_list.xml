@@ -28,23 +28,24 @@
             android:id="@+id/btnAdd"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:background="@color/blue"
+            android:background="@color/onPrimary"
             android:contentDescription="@string/add_room"
-            android:src="@android:drawable/ic_input_add" />
+            android:src="@drawable/ic_add" />
     </LinearLayout>
 
     <!-- Ô tìm kiếm -->
+
+    <!-- Danh sách phòng -->
     <EditText
         android:id="@+id/etSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tìm kiếm"
-        android:drawableStart="@android:drawable/ic_menu_search"
-        android:padding="12dp"
         android:layout_marginTop="12dp"
-        android:background="@drawable/bg_edittext" />
+        android:background="@drawable/bg_edittext"
+        android:drawableStart="@android:drawable/ic_search"
+        android:hint="Tìm kiếm"
+        android:padding="12dp" />
 
-    <!-- Danh sách phòng -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRooms"
         android:layout_width="match_parent"
