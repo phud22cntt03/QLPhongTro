@@ -1,3 +1,4 @@
+/*
 package com.example.qunlphngtr
 
 import android.content.Intent
@@ -39,3 +40,4 @@ class QuanLyPhongActivity : AppCompatActivity() {
         }
     }
 }
+*/

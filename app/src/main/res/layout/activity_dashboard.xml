@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C0EBEB"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Tiêu đề Dashboard -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:text="Dashboard"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <!-- Hàng ngang chứa 2 ô -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+
+        <!-- Ô thống kê: Số phòng -->
+        <LinearLayout
+            android:layout_width="131dp"
+            android:layout_height="78dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_card"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+
+            <TextView
+                android:id="@+id/tvRoomCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số phòng"
+                android:textColor="#666666"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!-- Thêm Space để tạo khoảng trống -->
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="match_parent" />
+
+        <!-- Ô thống kê: Bên phải -->
+        <LinearLayout
+            android:layout_width="131dp"
+            android:layout_height="78dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_card"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvPeopleCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Người thuê"
+                android:textColor="#666666"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-- Ô thống kê: Bên dưới -->
+    <LinearLayout
+        android:layout_width="131dp"
+        android:layout_height="78dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_card"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tvBillCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hóa đơn"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+   <!-- <Button
+        android:id="@+id/btnExample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="40dp"
+        android:background="#64160D"
+        android:text="Nhấn tôi" />-->
+
+
+</LinearLayout>

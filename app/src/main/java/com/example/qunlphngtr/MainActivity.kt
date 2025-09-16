@@ -10,9 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main) // load giao diện activity_main.xml
         val cardQuanLyPhongActivity = findViewById<MaterialCardView>(R.id.card1)
-        cardQuanLyPhongActivity.setOnClickListener {
+        /*cardQuanLyPhongActivity.setOnClickListener {
             val intent = Intent(this, QuanLyPhongActivity::class.java)
             startActivity(intent)
-        }
+        }*/
     }
 }

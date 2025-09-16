@@ -1,32 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_gradient"
     android:padding="24dp">
 
-    <EditText
-        android:id="@+id/inputEmail"
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đăng Ký Tài Khoản"
+        android:textColor="@android:color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Hình minh họa -->
+    <ImageView
+        android:id="@+id/registerImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/house"
+        android:contentDescription="Illustration"
+        android:layout_marginBottom="24dp"
+        android:scaleType="fitCenter" />
+
+    <!-- Ô nhập Họ tên -->
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        android:padding="12dp"/>
+        android:hint="Họ và Tên"
+        app:boxBackgroundMode="filled"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxStrokeColor="@color/blue">
 
-    <EditText
-        android:id="@+id/inputPassword"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Ô nhập Số điện thoại -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Số điện thoại"
+        app:boxBackgroundMode="filled"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxStrokeColor="@color/blue"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!-- Ô nhập Mật khẩu -->
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mật khẩu"
-        android:inputType="textPassword"
-        android:padding="12dp"
-        android:layout_marginTop="12dp"/>
+        app:boxBackgroundMode="filled"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:passwordToggleEnabled="true"
+        app:boxStrokeColor="@color/blue"
+        android:layout_marginTop="12dp">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Ô nhập Xác nhận Mật khẩu -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Xác nhận mật khẩu"
+        app:boxBackgroundMode="filled"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:passwordToggleEnabled="true"
+        app:boxStrokeColor="@color/blue"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Nút đăng ký -->
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Đăng ký"
-        android:layout_marginTop="20dp"/>
+        android:text="Đăng Ký"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
+        app:backgroundTint="@color/blue"
+        android:layout_marginTop="20dp"
+        android:padding="14dp"/>
+
+    <!-- Chuyển qua đăng nhập -->
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đã có tài khoản? Đăng nhập"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        android:layout_marginTop="16dp" />
+
 </LinearLayout>

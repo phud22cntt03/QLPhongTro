@@ -1,3 +1,4 @@
+/*
 package com.example.qunlphngtr
 import android.os.Bundle
 import android.widget.TextView
@@ -15,4 +16,4 @@ class BillDetailActivity : AppCompatActivity() {
         val textView = findViewById<TextView>(R.id.txtInvoiceDetail)
         textView.text = "Chi tiết hóa đơn #$invoiceId"
     }
-}
+}*/
