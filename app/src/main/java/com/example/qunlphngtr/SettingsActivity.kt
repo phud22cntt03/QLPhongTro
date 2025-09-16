@@ -5,13 +5,13 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
-class BillActivity : AppCompatActivity() {
+class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bills)
+        setContentView(R.layout.activity_settings)
 
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
-        bottomNav.selectedItemId = R.id.nav_bill
+        bottomNav.selectedItemId = R.id.nav_settings
 
         bottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -20,12 +20,12 @@ class BillActivity : AppCompatActivity() {
                     overridePendingTransition(0, 0)
                     true
                 }
-                R.id.nav_bill -> true
-                R.id.nav_settings -> {
-                    startActivity(Intent(this, SettingsActivity::class.java))
+                R.id.nav_bill -> {
+                    startActivity(Intent(this, BillActivity::class.java))
                     overridePendingTransition(0, 0)
                     true
                 }
+                R.id.nav_settings -> true
                 else -> false
             }
         }
