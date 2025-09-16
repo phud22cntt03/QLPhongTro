@@ -19,7 +19,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Phòng trọ"
+            android:text="Hóa đơn"
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="@android:color/black" />
@@ -58,7 +58,7 @@
         android:id="@+id/btnAddRoom"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Thêm phòng"
+        android:text="Tạo hóa đơn"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:layout_marginTop="16dp"
