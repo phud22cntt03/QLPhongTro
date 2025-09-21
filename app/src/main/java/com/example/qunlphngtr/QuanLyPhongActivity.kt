@@ -1,3 +1,4 @@
+/*
 package com.example.qunlphngtr
 import android.widget.EditText
 import android.app.Dialog
@@ -84,3 +85,4 @@ class QuanLyPhongActivity : AppCompatActivity() {
 
     }
 }
+*/

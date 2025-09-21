@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp"
+    android:gravity="center_vertical">
+    <!--android:background="@drawable/bg_item"-->
+
+
+    <!-- Nội dung bên trái -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nguyễn Văn A"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/tvGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giới tính: Nam"
+            android:textSize="14sp"
+            android:textColor="#666666"/>
+
+        <TextView
+            android:id="@+id/tvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0909 830 3802"
+            android:textSize="14sp"
+            android:textColor="#666666"/>
+    </LinearLayout>
+
+    <!-- Avatar/Icon bên phải -->
+    <ImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:background="#EEEEEE"
+        android:scaleType="centerInside"
+        android:padding="8dp"
+        android:layout_marginLeft="8dp"/>
+</LinearLayout>

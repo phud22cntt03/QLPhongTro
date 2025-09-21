@@ -20,21 +20,21 @@
         android:layout_marginBottom="24dp" />
 
     <!-- Hình minh họa -->
+
+    <!-- Ô nhập Số điện thoại -->
     <ImageView
         android:id="@+id/loginImage"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:src="@drawable/house"
-        android:contentDescription="Illustration"
         android:layout_marginBottom="24dp"
-        android:scaleType="fitCenter" />
+        android:contentDescription="Illustration"
+        android:scaleType="fitCenter"
+        android:src="@drawable/house" />
 
-
-    <!-- Ô nhập Email -->
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="Số điện thoại"
         app:boxBackgroundMode="filled"
         app:boxCornerRadiusTopStart="12dp"
         app:boxCornerRadiusTopEnd="12dp"
@@ -43,10 +43,10 @@
         app:boxStrokeColor="@color/blue">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputEmail"
+            android:id="@+id/inputPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress" />
+            android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Ô nhập Mật khẩu -->
@@ -82,7 +82,6 @@
         app:backgroundTint="@color/blue"
         android:layout_marginTop="20dp"
         android:padding="14dp"/>
-
 
     <!-- Chuyển qua đăng ký -->
     <TextView

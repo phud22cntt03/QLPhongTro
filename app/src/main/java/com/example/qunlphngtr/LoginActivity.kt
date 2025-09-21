@@ -6,24 +6,19 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.qunlphngtr.MainActivity
-import com.example.qunlphngtr.R
 import com.google.android.material.textfield.TextInputEditText
 
 class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Liên kết với layout activity_login.xml
         setContentView(R.layout.activity_login)
 
-        // Ánh xạ view bằng findViewById
-        val inputEmail = findViewById<TextInputEditText>(R.id.inputEmail)
+        val inputEmail = findViewById<TextInputEditText>(R.id.inputPhone)
         val inputPassword = findViewById<TextInputEditText>(R.id.inputPassword)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val tvRegister = findViewById<TextView>(R.id.tvRegister)
 
-        // Xử lý nút Đăng Nhập
         btnLogin.setOnClickListener {
             val email = inputEmail.text.toString().trim()
             val password = inputPassword.text.toString().trim()
@@ -39,11 +34,12 @@ class LoginActivity : AppCompatActivity() {
 //                Toast.makeText(this, "Sai email hoặc mật khẩu", Toast.LENGTH_SHORT).show()
 //            }
 
+
         }
 
-        // Xử lý nút Đăng Ký
         tvRegister.setOnClickListener {
-            startActivity(Intent(this, "RegisterActivity"::class.java))
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 }
