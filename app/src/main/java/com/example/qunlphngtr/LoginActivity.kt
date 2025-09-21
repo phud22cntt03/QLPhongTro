@@ -22,16 +22,19 @@ class LoginActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val email = inputEmail.text.toString().trim()
             val password = inputPassword.text.toString().trim()
+            val intent = Intent(this, QuanLyPhongActivity::class.java)
+            startActivity(intent)
+//            if (email.isEmpty() || password.isEmpty()) {
+//                Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show()
+//            } else if (email == "admin@gmail.com" && password == "123456") {
+//                Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show()
+//                startActivity(Intent(this, MainActivity::class.java))
+//                finish()
+//            } else {
+//                Toast.makeText(this, "Sai email hoặc mật khẩu", Toast.LENGTH_SHORT).show()
+//            }
 
-            if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(this, "Vui lòng nhập đầy đủ thông tin", Toast.LENGTH_SHORT).show()
-            } else if (email == "0123456789" && password == "123456") {
-                Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, MainActivity::class.java))
-                finish()
-            } else {
-                Toast.makeText(this, "Sai email hoặc mật khẩu", Toast.LENGTH_SHORT).show()
-            }
+
         }
 
         tvRegister.setOnClickListener {
