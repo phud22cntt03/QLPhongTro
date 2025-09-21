@@ -3,15 +3,17 @@ package com.example.qunlphngtr
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-
+import com.example.qunlphngtr.database.DatabaseHelper
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.card.MaterialCardView
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        val dbHelper = DatabaseHelper(this);
+        val db = dbHelper.writableDatabase
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_navigation)
 
         // Chọn mặc định là Home
