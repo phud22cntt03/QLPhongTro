@@ -25,7 +25,12 @@
 
         <activity android:name=".LoginActivity" android:exported="true" />
         <activity android:name=".WelcomeActivity" android:exported="true" />
+        <activity android:name=".RegisterActivity" android:exported="true" />
+<!--
         <activity android:name=".QuanLyPhongActivity" android:exported="true" />
+-->
+        <activity android:name=".TenantListActivity" />
+
     </application>
 
 </manifest>
