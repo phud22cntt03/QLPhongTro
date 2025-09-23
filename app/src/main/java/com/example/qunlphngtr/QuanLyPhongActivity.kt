@@ -53,7 +53,19 @@ class QuanLyPhongActivity : AppCompatActivity() {
 
         // Load dữ liệu ban đầu từ DB
         val roomList = db.getAllRooms().toMutableList()
-        roomAdapter = RoomAdapter(roomList)
+
+        // ✅ Truyền onItemClick khi tạo Adapter
+        roomAdapter = RoomAdapter(roomList) { room ->
+            val intent = Intent(this, RoomDetailActivity::class.java)
+            intent.putExtra("room_id", room.id)
+            intent.putExtra("room_name", room.name)
+            intent.putExtra("room_price", room.price)
+            intent.putExtra("room_area", room.area)
+            intent.putExtra("room_status", room.status)
+            intent.putExtra("room_description", room.description)
+            intent.putExtra("room_image", room.imageUri)
+            startActivity(intent)
+        }
         rvRooms.adapter = roomAdapter
 
         // Bottom Navigation
@@ -90,7 +102,7 @@ class QuanLyPhongActivity : AppCompatActivity() {
         val edtTenPhong = dialog.findViewById<EditText>(R.id.edtTenPhong)
         val edtGiaPhong = dialog.findViewById<EditText>(R.id.edtGiaPhong)
         val edtDienTich = dialog.findViewById<EditText>(R.id.edtDienTich)
-         imgPhong = dialog.findViewById(R.id.imgPhong)
+        imgPhong = dialog.findViewById(R.id.imgPhong)
         val btnChonAnh = dialog.findViewById<Button>(R.id.btnChonAnh)
         val btnLuu = dialog.findViewById<Button>(R.id.btnLuu)
         val btnHuy = dialog.findViewById<Button>(R.id.btnHuy)

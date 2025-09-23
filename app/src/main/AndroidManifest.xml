@@ -34,7 +34,7 @@
         <activity android:name=".BillActivity" android:exported="true" />
         <activity android:name=".SettingsActivity" android:exported="true" />
         <activity android:name=".QuanLyPhongActivity" android:exported="true" />
-        <activity android:name=".ThemPhongActivity" android:exported="true" />
+        <activity android:name=".RoomDetailActivity" android:exported="true" />
         <activity android:name=".BillDetailActivity" android:exported="true" />
     </application>
 

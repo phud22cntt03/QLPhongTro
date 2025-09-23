@@ -2,8 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFFFFF"
-    android:padding="20dp">
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,106 +14,140 @@
         <!-- Tiêu đề -->
         <TextView
             android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="#2979FF"
+            android:padding="12dp"
             android:text="Chi tiết phòng trọ"
             android:textSize="22sp"
             android:textStyle="bold"
+            android:textColor="#FFFFFF"
             android:layout_marginBottom="20dp"/>
 
         <!-- Card: Thông tin phòng -->
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:layout_marginBottom="16dp">
-<!--
-            android:background="@drawable/card_bg"
--->
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hệ liệu"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
-
-            <TextView
-                android:id="@+id/tvRoomId"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Mã P101"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Họ và tên"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
-
-            <TextView
-                android:id="@+id/tvTenantName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Nguyễn Văn A"
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Liên hệ"
-                android:textStyle="bold"
-                android:textSize="16sp"/>
-
-            <TextView
-                android:id="@+id/tvTenantPhone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0901234567"/>
-        </LinearLayout>
-
-        <!-- Card: Thanh toán -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:layout_marginBottom="20dp">
-
-            <!--android:gravity="space_between"
-            android:background="@drawable/card_bg"-->
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:padding="16dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <!-- Cột trái: thông tin phòng -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Thanh toán"
-                    android:textStyle="bold"
-                    android:textSize="16sp"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_vertical">
 
-                <TextView
-                    android:id="@+id/tvBillInfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Tiền phòng: 2,000,000đ\nĐiện: 300,000đ\nNước: 100,000đ"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mã phòng"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tvRoomId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="P101"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Người thuê"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tvTenantName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nguyễn Văn A"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Số điện thoại"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tvTenantPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0901234567"/>
+
+                </LinearLayout>
+
+                <!-- Cột phải: ảnh phòng -->
+                <ImageView
+                    android:id="@+id/imgRoom"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_home"
+                    android:layout_gravity="center_vertical"
+                    android:contentDescription="Ảnh phòng" />
+
             </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <Button
-                android:id="@+id/btnPayNow"
-                android:layout_width="wrap_content"
+
+        <!-- Card: Thanh toán -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#2979FF"
-                android:text="T908"
-                android:textColor="#FFFFFF" />
-        </LinearLayout>
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thanh toán"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBillInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tiền phòng: 2,000,000đ\nĐiện: 300,000đ\nNước: 100,000đ" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnPayNow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#2979FF"
+                    android:text="T908"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
 
         <!-- Nút Thanh toán lớn -->
         <Button

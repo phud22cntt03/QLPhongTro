@@ -3,42 +3,61 @@ package com.example.qunlphngtr.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.qunlphngtr.model.Room
+import com.bumptech.glide.Glide
 import com.example.qunlphngtr.R
-class RoomAdapter(private val list: MutableList<Room>) :
-    RecyclerView.Adapter<RoomAdapter.VH>() {
+import com.example.qunlphngtr.model.Room
+import android.net.Uri
 
-    class VH(view: View) : RecyclerView.ViewHolder(view) {
-        
-        val tvName: TextView = view.findViewById(R.id.tvRoomName)
-        val tvStatus: TextView = view.findViewById(R.id.tvStatus)
-        val tvDesc: TextView = view.findViewById(R.id.tvDescription)
+
+
+class RoomAdapter(
+    private val roomList: MutableList<Room>,
+    private val onItemClick: (Room) -> Unit
+) : RecyclerView.Adapter<RoomAdapter.RoomViewHolder>() {
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RoomViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_room, parent, false)
+        return RoomViewHolder(view)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.item_room, parent, false)
-        return VH(v)
+    override fun onBindViewHolder(holder: RoomViewHolder, position: Int) {
+        val room = roomList[position]
+
+        holder.tvName.text = room.name
+        holder.tvStatus.text = "Trạng thái: ${room.status}"
+        holder.tvDescription.text = room.description
+
+        // ✅ Load ảnh bằng Glide (ổn định hơn setImageURI)
+        if (!room.imageUri.isNullOrEmpty()) {
+            Glide.with(holder.itemView.context)
+                .load(Uri.parse(room.imageUri))
+                .placeholder(R.drawable.ic_launcher_background) // ảnh mặc định khi chưa có ảnh
+                .into(holder.imgRoom)
+        } else {
+            holder.imgRoom.setImageResource(R.drawable.ic_launcher_background)
+        }
+
+        // Sự kiện click item
+        holder.itemView.setOnClickListener {
+            onItemClick(room)
+        }
     }
 
-    override fun onBindViewHolder(holder: VH, position: Int) {
-        val r = list[position]
-        holder.tvName.text = r.name
-        holder.tvStatus.text = "Trạng thái: ${r.status}"
-        holder.tvDesc.text = r.description
-    }
-
-    override fun getItemCount(): Int = list.size
-
-    fun setData(newList: List<Room>) {
-        list.clear()
-        list.addAll(newList)
-        notifyDataSetChanged()
-    }
+    override fun getItemCount(): Int = roomList.size
 
     fun addRoom(room: Room) {
-        list.add(0, room)
-        notifyItemInserted(0)
+        roomList.add(room)
+        notifyItemInserted(roomList.size - 1)
+    }
+
+    class RoomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val tvName: TextView = itemView.findViewById(R.id.tvRoomName)
+        val tvStatus: TextView = itemView.findViewById(R.id.tvStatus)
+        val tvDescription: TextView = itemView.findViewById(R.id.tvDescription)
+        val imgRoom: ImageView = itemView.findViewById(R.id.imgRoom)
     }
 }
