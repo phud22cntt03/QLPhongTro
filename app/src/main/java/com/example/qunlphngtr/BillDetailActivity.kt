@@ -1,4 +1,3 @@
-/*
 package com.example.qunlphngtr
 import android.os.Bundle
 import android.widget.TextView
@@ -13,7 +12,7 @@ class BillDetailActivity : AppCompatActivity() {
         val invoiceId = intent.getIntExtra("invoice_id", -1)
 
         // TODO: gọi DB/API để load dữ liệu hóa đơn theo invoiceId
-        val textView = findViewById<TextView>(R.id.txtInvoiceDetail)
-        textView.text = "Chi tiết hóa đơn #$invoiceId"
+       /* val textView = findViewById<TextView>(R.id.txtInvoiceDetail)
+        textView.text = "Chi tiết hóa đơn #$invoiceId"*/
     }
-}*/
+}

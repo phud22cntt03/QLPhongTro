@@ -15,7 +15,7 @@ class WelcomeActivity : AppCompatActivity() {
 
         nextButton.setOnClickListener {
             // Chuyển sang MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
             finish() // đóng WelcomeActivity, không cho quay lại
         }
