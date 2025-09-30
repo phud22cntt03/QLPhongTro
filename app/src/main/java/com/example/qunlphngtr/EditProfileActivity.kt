@@ -64,9 +64,6 @@ class EditProfileActivity : AppCompatActivity() {
             calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
             updateBirthday()
         }
-
-
-
         btnPickDate.setOnClickListener {
             showDatePicker(dateSetListener)
         }
